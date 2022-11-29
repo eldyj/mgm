@@ -1,10 +1,10 @@
 # Mgm
 
 ## description:
-Simple terminal game.
-To win the party,
-you need to block all possible cells,
-where the opponent can put his figure
+Simple terminal game. <br/>
+To win the party, <br/>
+you need to block all possible cells, <br/>
+where the opponent can put his figure <br/>
 
 ## usage:
 
@@ -25,7 +25,7 @@ mgm 5
 ```
 ## compile + install:
 
-as first you need <a href="https://docs.scala-lang.org/getting-started.html">sbt</a>
+as first you need <a href="https://docs.scala-lang.org/getting-started.html">sbt</a> <br/>
 then
 ```sh
 # linux / mac
