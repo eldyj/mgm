@@ -9,12 +9,10 @@ where the opponent can put his figure <br/>
 ## usage:
 
 ```sh
-# mgm <BoardSize>
-# where BoardSize is number beetween 3 and 9 (including 3 and 9)
-mgm 5
+mgm -help
 ```
 
-## commands:
+## in-game commands:
 
 ```yaml
 : <letter><number> # go to column <letter>, to position <number>

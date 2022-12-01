@@ -1,9 +1,7 @@
 package Mgm
 import scala.collection.mutable.ArrayBuffer
-import libs.Ansi
-import libs.Elib
-import game.Board.Board
-import game.Board.BoardItem
+import libs.*
+import game.Board.*
 import game.Player
 
 object Mgm {
@@ -48,8 +46,52 @@ object Mgm {
     brd
   }
 
-  @main def main(len: Int): Unit = {
-    var finalsize: Int = len
+  def main(arguments: Array[String]): Unit = {
+    Argv.parse(arguments)
+    var finalsize: Int = 5
+    if (Argv.arg.contains("-help") || Argv.arg.contains("-h")) {
+      println(Ansi.fg("usage","green")+":")
+      println(Ansi.fg("  mgm <flags> <miniflags>"))
+      println(Ansi.fg("flags","green")+":")
+      var flags = List(
+        "size"/*,
+        "player1-color",
+        "player2-color",
+        "player1-figure",
+        "player2-figure"*/
+      )
+      var flags_description = List(
+        "set board size"/*,
+        "set first player color",
+        "set second player color",
+        "set first player figure",
+        "set second player figure"*/
+      )
+      for (i <- (0 to (flags.length - 1))) {
+        println("  --"+Ansi.fg(flags(i),"green")+": " + Ansi.fg(flags_description(i),"cyan"))
+      }
+      println(Ansi.fg("miniflags:","green"))
+      println(Ansi.fg("  -h | -help","green")+": " + Ansi.fg("","cyan"))
+      System.exit(0)
+    }
+
+    if (Argv.get("size") != "") {
+      try {
+        finalsize = Argv.get("size").toInt
+      } catch {
+        case _ => {
+          println
+            (
+              Ansi.fg
+                (
+                  "Unexpected board size " + Argv.get
+                    ("size") + ", using " + finalsize,
+                  "yellow"
+                )
+            )
+        }
+      }
+    }
 
     if (finalsize > 9) {
       finalsize = 9

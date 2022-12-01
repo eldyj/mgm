@@ -151,11 +151,11 @@ class Board
   def win: Unit = {
     if (canput(Figure.figure1) && !canput(Figure.figure2)) {
       println
-        (Ansi.fg(Figure.figure1.color + " command won", Figure.figure1.color))
+        (Ansi.fg(Figure.figure1.color + " player won", Figure.figure1.color))
       System.exit(0)
     } else if (!canput(Figure.figure1) && canput(Figure.figure2)) {
       println
-        (Ansi.fg(Figure.figure2.color + " command won", Figure.figure2.color))
+        (Ansi.fg(Figure.figure2.color + " player won", Figure.figure2.color))
       System.exit(0)
     } else if (!canput(Figure.figure1) && !canput(Figure.figure2)) {
       println(Ansi.fg("draw", "yellow"))
