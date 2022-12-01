@@ -54,18 +54,22 @@ object Mgm {
       println(Ansi.fg("  mgm <flags> <miniflags>","cyan"))
       println(Ansi.fg("flags","green")+":")
       var flags = List(
-        "size"/*,
+        "size"
+        /*
         "player1-color",
         "player2-color",
         "player1-figure",
-        "player2-figure"*/
+        "player2-figure"
+        */
       )
       var flags_description = List(
-        "set board size"/*,
+        "set board size"
+        /*
         "set first player color",
         "set second player color",
         "set first player figure",
-        "set second player figure"*/
+        "set second player figure"
+        */
       )
       for (i <- (0 to (flags.length - 1))) {
         println("  --"+Ansi.fg(flags(i),"green")+": " + Ansi.fg(flags_description(i),"cyan"))
