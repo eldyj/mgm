@@ -51,7 +51,7 @@ object Mgm {
     var finalsize: Int = 5
     if (Argv.arg.contains("-help") || Argv.arg.contains("-h")) {
       println(Ansi.fg("usage","green")+":")
-      println(Ansi.fg("  mgm <flags> <miniflags>"))
+      println(Ansi.fg("  mgm <flags> <miniflags>","cyan"))
       println(Ansi.fg("flags","green")+":")
       var flags = List(
         "size"/*,
