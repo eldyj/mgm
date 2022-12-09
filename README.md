@@ -29,7 +29,7 @@ then
 # linux / mac
 git clone https://github.com/Eldyj/mgm mgm
 cd mgm
-sbt compile
+sbt compile --native
 cp target/scala-*/mgm-out ~/.local/bin/mgm
 ```
 
