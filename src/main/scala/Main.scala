@@ -50,32 +50,38 @@ object Mgm {
     Argv.parse(arguments)
     var finalsize: Int = 5
     if (Argv.arg.contains("-help") || Argv.arg.contains("-h")) {
-      println(Ansi.fg("usage","green")+":")
-      println(Ansi.fg("  mgm <flags> <miniflags>","cyan"))
-      println(Ansi.fg("flags","green")+":")
-      var flags = List(
-        "size"
-        /*
+      println(Ansi.fg("usage", "green") + ":")
+      println(Ansi.fg("  mgm <flags> <miniflags>", "cyan"))
+      println(Ansi.fg("flags", "green") + ":")
+      var flags = List
+        (
+          "size"
+          /*
         "player1-color",
         "player2-color",
         "player1-figure",
         "player2-figure"
-        */
-      )
-      var flags_description = List(
-        "set board size"
-        /*
+           */
+        )
+      var flags_description = List
+        (
+          "set board size"
+          /*
         "set first player color",
         "set second player color",
         "set first player figure",
         "set second player figure"
-        */
-      )
+           */
+        )
       for (i <- (0 to (flags.length - 1))) {
-        println("  --"+Ansi.fg(flags(i),"green")+": " + Ansi.fg(flags_description(i),"cyan"))
+        println
+          (
+            "  --" + Ansi.fg(flags(i), "green") + ": " + Ansi.fg
+              (flags_description(i), "cyan")
+          )
       }
-      println(Ansi.fg("miniflags:","green"))
-      println(Ansi.fg("  -h | -help","green")+": " + Ansi.fg("","cyan"))
+      println(Ansi.fg("miniflags:", "green"))
+      println(Ansi.fg("  -h | -help", "green") + ": " + Ansi.fg("", "cyan"))
       System.exit(0)
     }
 
